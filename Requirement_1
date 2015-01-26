@@ -1,0 +1,15 @@
+/* 
+Sum all the number in a single link. 
+You can only use recursion. 
+*/
+
+Pseudo code:
+
+I call a list using a function. 
+I input a singleList();
+I will find each of the element inside the list, and name the element i;
+I will use a while loop to find all the elements inside a singleList(i);
+While singleList(i) is not null, do
+I will check if the singleList only has a tail; else print out the sum
+I will use a recursion sum=sum+singleList(i)
+I will print out the sum and the singleList.
