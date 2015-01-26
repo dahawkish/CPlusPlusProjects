@@ -3,6 +3,7 @@ Sum all the number in a single link.
 You can only use recursion. 
 */
 
+/*
 Pseudo code:
 
 I call a list using a function. 
@@ -13,3 +14,4 @@ While singleList(i) is not null, do
 I will check if the singleList only has a tail; else print out the sum
 I will use a recursion sum=sum+singleList(i)
 I will print out the sum and the singleList.
+*/
