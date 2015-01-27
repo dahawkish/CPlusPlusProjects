@@ -6,4 +6,19 @@ Traverse the list again.
 
 */
 
+/*
 
+Pseudo code:
+I call a list using a function.
+I input a singleList();
+I will find each of the element inside the list, and name the element i;
+I will use a while loop to find all the elements inside a singleList(i);
+While singleList(i) is not null, do
+I will check if the singleList only has a tail; else print out the list.
+Or I will traverse the list using .next
+I will use a recursion newList(-i)=singleList(i)
+I will print out the newList.
+
+I will repeat what I did above for another traversion. 
+
+*/
