@@ -1,0 +1,154 @@
+#include<cstdlib>
+#include<iostream>
+#include <cstddef>
+using namespace std;
+
+class Node{
+
+public:
+	int data;
+	Node *child;
+	Node *sibling;
+	Node(){
+	}
+};
+
+
+
+class Tree1 {
+public:
+    Node *root;
+
+    Tree1() {
+        root = NULL;
+    }
+
+    Tree1(int val) {
+        Node *root = new Node();
+        cout << "root = " << root << endl;
+        root->data = val;
+        root->child = NULL;
+        root->sibling = NULL;
+    }
+
+    Node *insertchild(Node *n, int key);
+    Node *insertsibling(Node *n, int key);
+    Node *findNode(Node *s, int key);
+    void displayTree(Node *);
+    void preTraverse(Node *s);
+    Node *rinsert(Node *s, int key);
+    void BFS(Node * s);
+    Node *rootNode();
+
+};
+
+Node *Tree1::rootNode() {
+
+    return ( root);
+
+}
+
+Node *Tree1::findNode(Node *n, int key) {
+    Node *tmp;
+
+    if (n == NULL) {
+        return ( n);
+    }
+
+
+    if (n->data == key) {
+        return (n);
+    }
+
+    tmp = findNode(n->child, key);
+    if (tmp == NULL) {
+        while (n->sibling != NULL) {
+            tmp = findNode(n->sibling, key);
+            if (tmp != NULL) {
+                break;
+                return(tmp);
+            }
+            n = n->sibling;
+        }
+    }
+    return (tmp);
+}
+
+Node *Tree1::insertsibling(Node *n, int key) {
+    if (n->sibling == NULL) {
+        Node *tmp = new Node();
+        n->sibling = tmp;
+        tmp->data = key;
+        tmp->child = NULL;
+        tmp->sibling = NULL;
+        return (tmp);
+    } else {
+        return (insertsibling(n->sibling, key));
+    }
+}
+
+Node *Tree1::insertchild(Node *n, int key) {
+    if ( n == NULL ) {
+        Node *tmp = new Node();
+        root = tmp;
+        tmp->data = key;
+        tmp->child = NULL;
+        tmp->sibling = NULL;
+        return (tmp);
+    }
+    if (n->child == NULL) {
+        Node *tmp = new Node();
+        n->child = tmp;
+        tmp->data = key;
+        tmp->child = NULL;
+        tmp->sibling = NULL;
+        return (tmp);
+    } else {
+        return (insertsibling(n->child, key));
+    }
+}
+
+void Tree1::preTraverse(Node *start) {
+    int i;
+    Node *tmp;
+    if (start != NULL) {
+        cout << start->data << "->";
+        preTraverse(start->child);
+        tmp = start->sibling;
+        while (tmp != NULL) {
+            cout << tmp->data << "->";
+            preTraverse(tmp->child);
+
+            tmp = tmp->sibling;
+        }
+    }
+
+}
+
+int main(int argc, const char * argv[])
+{
+
+Tree1 myTree;
+Node *treeNode=new Node();
+myTree.insertchild(treeNode, 15);
+myTree.findNode(treeNode,15);
+
+myTree.insertchild(treeNode, 20);
+myTree.findNode(treeNode, 20);
+
+myTree.insertchild(treeNode, 30);
+myTree.findNode(treeNode, 30);
+
+myTree.insertchild(treeNode, 30);
+myTree.findNode(treeNode,30);
+
+myTree.insertsibling(treeNode,25);
+myTree.findNode(treeNode,25);
+myTree.insertsibling(treeNode, 26);
+
+myTree.preTraverse(treeNode);
+//is this the insertion you need at the end?
+
+    return 0;
+}
+
