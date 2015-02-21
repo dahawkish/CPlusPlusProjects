@@ -153,6 +153,18 @@ myTree.insertsibling(treeNode,25);
 myTree.findNode(treeNode,25);
 myTree.insertsibling(treeNode, 26);
 
+myTree.insertchild(treeNode, 30);
+myTree.findNode(treeNode, 30);
+myTree.insertsibling(treeNode, 33);
+
+myTree.insertchild(treeNode, 40);
+myTree.findNode(treeNode, 40);
+myTree.insertsibling(treeNode, 50);
+
+myTree.insertchild(treeNode, 22);
+myTree.findNode(treeNode, 22);
+myTree.insertsibling(treeNode, 35);
+
 myTree.insertsibling(treeNode, 66);
 
 myTree.preTraverse(treeNode);
