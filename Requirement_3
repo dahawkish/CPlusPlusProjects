@@ -9,6 +9,7 @@ public:
 	int data;
 	Node *child;
 	Node *sibling;
+	Node *lastSibling;
 	Node(){
 	}
 };
@@ -75,15 +76,21 @@ Node *Tree1::findNode(Node *n, int key) {
 }
 
 Node *Tree1::insertsibling(Node *n, int key) {
+
     if (n->sibling == NULL) {
         Node *tmp = new Node();
         n->sibling = tmp;
         tmp->data = key;
         tmp->child = NULL;
         tmp->sibling = NULL;
+
+        tmp->lastSibling=tmp;
+
+        n->lastSibling= tmp->lastSibling;
+
         return (tmp);
     } else {
-        return (insertsibling(n->sibling, key));
+        return (insertsibling(n->lastSibling, key));
     }
 }
 
@@ -111,6 +118,7 @@ Node *Tree1::insertchild(Node *n, int key) {
 void Tree1::preTraverse(Node *start) {
     int i;
     Node *tmp;
+    Node *newLink;
     if (start != NULL) {
         cout << start->data << "->";
         preTraverse(start->child);
@@ -118,7 +126,6 @@ void Tree1::preTraverse(Node *start) {
         while (tmp != NULL) {
             cout << tmp->data << "->";
             preTraverse(tmp->child);
-
             tmp = tmp->sibling;
         }
     }
@@ -139,16 +146,19 @@ myTree.findNode(treeNode, 20);
 myTree.insertchild(treeNode, 30);
 myTree.findNode(treeNode, 30);
 
-myTree.insertchild(treeNode, 30);
-myTree.findNode(treeNode,30);
+myTree.insertchild(treeNode, 40);
+myTree.findNode(treeNode,40);
 
 myTree.insertsibling(treeNode,25);
 myTree.findNode(treeNode,25);
 myTree.insertsibling(treeNode, 26);
 
+myTree.insertsibling(treeNode, 66);
+
 myTree.preTraverse(treeNode);
-//is this the insertion you need at the end?
 
     return 0;
 }
+
+
 
