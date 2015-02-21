@@ -39,13 +39,14 @@ public:
     Node *insertsibling(Node *n, int key);
     Node *findNode(Node *s, int key);
     Node *findLargest (Node *s);
-    void displayTree(Node *);
-    void preTraverse(Node *s);
+    void preTraverse(Node *s, int *key);
     Node *rinsert(Node *s, int key);
     void BFS(Node * s);
     Node *rootNode();
 
 };
+
+
 
 Node *Tree1::rootNode() {
 
@@ -113,25 +114,42 @@ Node *Tree1::insertchild(Node *n, int key) {
     }
 }
 
-void Tree1::preTraverse(Node *start) {
+void Tree1::preTraverse(Node *start, int *tmpMax) {
     Node *tmp;
+
     if (start != NULL) {
         cout << start->data << "->";
-        preTraverse(start->child);
+
+        if (*tmpMax < start->data){
+
+
+        *tmpMax=start->data;
+
+        }
+
+        preTraverse(start->child, tmpMax);
+
         tmp = start->sibling;
+
         while (tmp != NULL) {
             cout << tmp->data << "->";
-            preTraverse(tmp->child);
 
+            if (*tmpMax < tmp->data){
+            *tmpMax=tmp->data;
+
+            };
+
+            preTraverse(tmp->child, tmpMax);
             tmp = tmp->sibling;
-        }
-    }
 
+        }
+
+}
 }
 
 
 int main(int argc, const char * argv[])
-{
+	{
 
 Tree1 myTree;
 Node *treeNode=new Node();
@@ -151,9 +169,12 @@ myTree.insertsibling(treeNode,25);
 myTree.findNode(treeNode,25);
 myTree.insertsibling(treeNode, 26);
 
-myTree.preTraverse(treeNode);
-//it is time to sort the list
-//find the maximum value
+int maximum=0;
+myTree.preTraverse(treeNode, &maximum);
+cout <<"The maximum value is " << maximum<< endl;
+
+//it is time to sort the list;
+//find the maximum val
 
     return 0;
-}
+	};
