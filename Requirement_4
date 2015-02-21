@@ -120,13 +120,6 @@ void Tree1::preTraverse(Node *start, int *tmpMax) {
     if (start != NULL) {
         cout << start->data << "->";
 
-        if (*tmpMax < start->data){
-
-
-        *tmpMax=start->data;
-
-        }
-
         preTraverse(start->child, tmpMax);
 
         tmp = start->sibling;
@@ -167,6 +160,14 @@ myTree.findNode(treeNode,30);
 
 myTree.insertsibling(treeNode,25);
 myTree.findNode(treeNode,25);
+myTree.insertsibling(treeNode, 26);
+
+myTree.insertchild(treeNode, 11);
+myTree.findNode(treeNode,11);
+myTree.insertsibling(treeNode, 15);
+
+myTree.insertchild(treeNode, 16);
+myTree.findNode(treeNode, 16);
 myTree.insertsibling(treeNode, 26);
 
 int maximum=0;
