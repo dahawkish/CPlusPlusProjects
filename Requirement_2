@@ -1,24 +1,76 @@
-/*
+//============================================================================
+// Name        : 2.cpp
+// Author      : NingZhou
+// Version     :
 
-Traverse a list using recursion.
+//============================================================================
 
-Traverse the list again.
+#include <iostream>
+#include<stdio.h>
+#include<iomanip>
+#include<stdlib.h>
+using namespace std;
 
-*/
+struct node
+{
+	int data;
+	struct node* next;
 
-/*
+};
 
-Pseudo code:
-I call a list using a function.
-I input a singleList();
-I will find each of the element inside the list, and name the element i;
-I will use a while loop to find all the elements inside a singleList(i);
-While singleList(i) is not null, do
-I will check if the singleList only has a tail; else print out the list.
-Or I will traverse the list using .next
-I will use a recursion newList(-i)=singleList(i)
-I will print out the newList.
+static void reverse(struct Node *p)
+{
+	Node *next;
+	if (p->next ==NULL){
+		return p;
+	}else{
+		Node* t=reverse(p->next);
+		p->next->next=p;
+		p->next=NULL;
+		return t;
+	}
+}
 
-I will repeat what I did above for another traversion. 
+void additem(struct node** head, int item)
+{
+	struct node* numberNode=
+			(struct node*) malloc(sizeof(struct node));
 
-*/
+	numberNode->data=item;
+
+	numberNode->next=(*head);
+
+	(*head)=numberNode;
+
+}
+
+void traverseList(struct node *head)
+{
+	struct node*temp=head;
+	while(temp!=NULL);
+	{
+		printf("%d ", temp->data);
+		temp=temp->next;
+	}
+}
+
+int main() {
+	struct node* head=NULL;
+	additem(&head, 1);
+	additem(&head, 2);
+	additem(&head, 3);
+	additem(&head, 4);
+	additem(&head, 5);
+	additem(&head, 6);
+	additem(&head, 7);
+	additem(&head, 8);
+	additem(&head, 9);
+	additem(&head, 10);
+
+	traverseList(head);
+	reverse(&head);
+	printf("\n Reversed Linked list \n");
+	traverseList(head);
+	getchar();
+
+}
