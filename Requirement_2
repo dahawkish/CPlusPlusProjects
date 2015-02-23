@@ -87,10 +87,11 @@ int main() {
 
 
 
-    recursiveReverse(&head);
+
     printList(head);
-    recursiveReverse(&head);
+    
     printf("\n Reversed Linked list \n");
+    recursiveReverse(&head);
     printList(head);
     getchar();
 }
