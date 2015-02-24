@@ -19,24 +19,24 @@ struct node
 
 };
 
-static void recursiveReverse(struct node** head_ref)
+static void recursiveReverse(struct node** head)
 {
-    struct node* first;
+    struct node* beg;
     struct node* rest;
 
-    if (*head_ref == NULL)
+    if (*head == NULL)
        return;
 
-    first = *head_ref;
-    rest  = first->next;
+    beg = *head;
+    rest  = beg->next;
 
     if (rest == NULL)
        return;
 
     recursiveReverse(&rest);
-    first->next->next  = first;
-    first->next  = NULL;
-    *head_ref = rest;
+    beg->next->next  = beg;
+    beg->next  = NULL;
+    *head = rest;
 }
 
 void additem(struct node** head, int item)
