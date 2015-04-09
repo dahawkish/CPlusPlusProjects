@@ -13,8 +13,6 @@ void count(int* arr, int size)
         printf("%d ", sum);
 }
 
-
-
 int main() {
 	//input how many eggs
 	int arr[]={1, 2, 3, 4, 5, 6, 7};
