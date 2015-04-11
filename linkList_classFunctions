@@ -1,0 +1,70 @@
+#include <iostream>
+#include<stdio.h>
+#include<iomanip>
+#include<stdlib.h>
+
+using namespace std;
+
+class Node{
+public:
+	int data;
+	Node *node;
+	Node* next;
+	Node(){
+	}
+};
+
+class linkList{
+public:
+	Node *element;
+	Node* next;
+    linkList() {
+        element = NULL;
+        * next=NULL;
+    }
+
+    linkList(int val) {
+        Node *element = new Node();
+        cout << "element = " << element << endl;
+        element->data = val;
+    }
+    Node *addNode(Node *element, int elementValue);
+    Node *Traverse(Node *element);
+    Node *sumRecursion(Node *element, int data);
+};
+
+
+Node *linkList::addNode(Node *element, int elementValue){
+		Node *root= (struct root*) malloc(int elementValue));
+
+		element->data=elementValue;
+
+		element *next=(Node *root);
+
+
+}
+
+Node *linkList::Traverse(Node *element) {
+
+		Node *root=new Node();
+
+		while(root->data!=NULL)
+
+		{
+			printf("%d ", root->data);
+
+			//root=root->data;
+
+			};
+}
+
+
+int main(int argc, const char * argv[]){
+	linkList userInputLinkList;
+	Node *userNode=new Node();
+	//userInputLinkList.addNode(element, 15);
+	//myTree.findNode(treeNode,15);
+
+	cout << "Here is a link list." << endl;
+	return 0;
+}
