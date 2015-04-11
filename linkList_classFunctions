@@ -1,7 +1,7 @@
 #include <iostream>
-#include<stdio.h>
-#include<iomanip>
-#include<stdlib.h>
+#include <stdio.h>
+#include <iomanip>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -10,6 +10,7 @@ public:
 	int data;
 	Node *node;
 	Node* next;
+	//how to structure a linklist with the next node
 	Node(){
 	}
 };
@@ -18,6 +19,7 @@ class linkList{
 public:
 	Node *element;
 	Node* next;
+	//how to structure a linklist with the next node
     linkList() {
         element = NULL;
         * next=NULL;
@@ -35,36 +37,26 @@ public:
 
 
 Node *linkList::addNode(Node *element, int elementValue){
-		Node *root= (struct root*) malloc(int elementValue));
-
 		element->data=elementValue;
-
-		element *next=(Node *root);
-
-
+		//assign a value to a node
+		//point to the next node and assign value
 }
 
 Node *linkList::Traverse(Node *element) {
-
-		Node *root=new Node();
-
-		while(root->data!=NULL)
-
+		Node *e=new Node();
+		while(e->data!=NULL)
 		{
-			printf("%d ", root->data);
-
-			//root=root->data;
-
+			printf("%d ", e->data);
 			};
 }
 
 
 int main(int argc, const char * argv[]){
-	linkList userInputLinkList;
+	linkList mylinkList;
+	//how to declare user's linklist and its functions using declared
 	Node *userNode=new Node();
 	//userInputLinkList.addNode(element, 15);
 	//myTree.findNode(treeNode,15);
-
 	cout << "Here is a link list." << endl;
 	return 0;
 }
