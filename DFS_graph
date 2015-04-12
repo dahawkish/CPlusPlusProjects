@@ -1,0 +1,15 @@
+/* 
+algorithm
+int main () {
+
+users input a directed vertice / directed vertices
+create a graph with all the vertices
+choose a n*n array to link all the vertices for the graph
+search the graph using DFS
+create a function for DFS
+}
+*/
+
+//class of a graph, with numbers of vertices, objects of lists, and edges etc.
+//create an object under graph and name functions DFS, input vertices, create edges and print functions
+
