@@ -87,7 +87,7 @@ bool Queue::isEmpty() {
 class Graph {
     private:
         int n; /// n is the number of vertices in the graph
-        int **E; /// A stores the edges between two vertices
+        int **E; /// E stores the edges between two vertices
     public:
         Graph(int size = 2);
         ~Graph();
