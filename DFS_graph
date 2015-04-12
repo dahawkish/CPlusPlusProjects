@@ -12,4 +12,9 @@ create a function for DFS
 
 //class of a graph, with numbers of vertices, objects of lists, and edges etc.
 //create an object under graph and name functions DFS, input vertices, create edges and print functions
+//bascially, we choose a pair of vertice (a, b) from a list of vertices [ (a,b), (a, c), (a, d), (b, d)]
+//we choose a and find out what adjacent to a, we have a->b, a->c, a->d and this is how we create the graph
+//and then we see the next distinct element among the vertices for the beg point, which is b; we have only b->d
+//the rest of the distinct elements are end points and visited
+//this is how we search the vertcies
 
