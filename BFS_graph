@@ -1,2 +1,181 @@
 //same as BFS approach
 //but I will indicate whichever is better off and the differences in both traversals
+//it kills all node on the same level of search other than DFS
+
+
+#include <iostream>
+#include<stdio.h>
+#include<iomanip>
+#include<stdlib.h>
+#include <list>
+#include <queue>
+#include <ctime>
+
+using namespace std;
+struct node {
+    int val;
+    node *next;
+};
+class Queue {
+    private:
+        node *head;
+        node *tail;
+    public:
+        Queue();
+        ~Queue();
+        bool isEmpty();
+        void enqueue(int);
+        int dequeue();
+        void display();
+};
+
+void Queue::display(){
+    node *vertice = new node;
+    vertice = head;
+    if(head == NULL){
+        cout<<"\nEmpty Graph\n";
+    }else{
+        while(vertice!=NULL){
+            cout<<endl<<vertice->val;
+            vertice = vertice->next;
+        }
+    }
+}
+
+Queue::Queue() {
+    head = NULL;
+    tail = NULL;
+}
+
+Queue::~Queue() {
+    delete head;
+}
+
+void Queue::enqueue(int data) {
+    node *temp = new node();
+    temp->val = data;
+    temp->next = NULL;
+    if(head == NULL){
+        head = temp;
+    }else{
+        tail->next = temp;
+    }
+    tail = temp;
+}
+
+int Queue::dequeue() {
+    node *temp = new node();
+    int value;
+    if(head == NULL){
+        cout<<"\nIt is an empty graph.\n";
+    }else{
+        temp = head;
+        value = temp->val;
+        head = head->next;
+        delete temp;
+    }
+    return value;
+}
+
+bool Queue::isEmpty() {
+    return (head == NULL);
+}
+
+
+
+class Graph {
+    private:
+        int n; /// n is the number of vertices in the graph
+        int **E; /// A stores the edges between two vertices
+    public:
+        Graph(int size = 2);
+        ~Graph();
+        bool isConnected(int, int);
+        void addEdge(int u, int v);
+        void BFS(int );
+};
+
+Graph::Graph(int size) {
+    int i, j;
+    if (size < 2) n = 2;
+    else n = size;
+    E = new int*[n];
+    for (i = 0; i < n; ++i)
+        E[i] = new int[n];
+    for (i = 0; i < n; ++i)
+        for (j = 0; j < n; ++j)
+            E[i][j] = 0;
+}
+
+Graph::~Graph() {
+    for (int i = 0; i < n; ++i)
+    delete [] E[i];
+    delete [] E;
+}
+
+
+bool Graph::isConnected(int u, int v) {
+    return (E[u-1][v-1] == 1);
+}
+
+
+void Graph::addEdge(int u, int v) {
+    E[u-1][v-1] = E[v-1][u-1] = 1;
+}
+
+
+void Graph::BFS(int s) {
+    Queue Q;
+
+
+    bool *explored = new bool[n+1];
+
+
+    for (int i = 1; i <= n; ++i)
+    explored[i] = false;
+
+
+    Q.enqueue(s);
+    explored[s] = true;
+    cout << "Breadth first Search starting from vertex ";
+    cout << s << " : " << endl;
+
+
+    while (!Q.isEmpty()) {
+
+        int v = Q.dequeue();
+
+        cout << v << " ";
+
+
+        for (int w = 1; w <= n; ++w)
+
+
+            if (isConnected(v, w) && !explored[w]) {
+
+                Q.enqueue(w);
+
+                explored[w] = true;
+            }
+    }
+    cout << endl;
+    delete [] explored;
+}
+
+int main() {
+	//vertices [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+    Graph g(11);
+    g.addEdge(1, 2);    g.addEdge(1, 3);  g.addEdge(10,9); g.addEdge(1,5);  g.addEdge(3,11);
+    g.addEdge(2, 4);    g.addEdge(3, 4);  g.addEdge(7,7);  g.addEdge(2,9);  g.addEdge(4,11);
+    g.addEdge(3, 1);    g.addEdge(4 ,7);  g.addEdge(5,4);  g.addEdge(2,10); g.addEdge(7,6);
+    g.addEdge(5, 1);    g.addEdge(5, 7);  g.addEdge(1,10); g.addEdge(2,8);  g.addEdge(7,5);
+    g.addEdge(10, 11);  g.addEdge(8,9);   g.addEdge(1,7);  g.addEdge(3,11); g.addEdge(2,6);
+    g.addEdge(5,5);
+    g.addEdge(6,9);
+    g.addEdge(11,9);
+
+    g.BFS(3);
+    g.BFS(4);
+}
+
