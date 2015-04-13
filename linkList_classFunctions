@@ -8,9 +8,7 @@ using namespace std;
 class Node{
 public:
 	int data;
-	Node *node;
-	Node* next;
-	//how to structure a linklist with the next node
+	Node *next;
 	Node(){
 	}
 };
@@ -18,11 +16,8 @@ public:
 class linkList{
 public:
 	Node *element;
-	Node* next;
-	//how to structure a linklist with the next node
     linkList() {
         element = NULL;
-        * next=NULL;
     }
 
     linkList(int val) {
@@ -30,33 +25,63 @@ public:
         cout << "element = " << element << endl;
         element->data = val;
     }
-    Node *addNode(Node *element, int elementValue);
-    Node *Traverse(Node *element);
-    Node *sumRecursion(Node *element, int data);
+    Node *addNode(Node *e, int eValue);
+    Node *Traverse(Node *e, int *temp);
+    Node *sumRecursion(Node *element, int eValue);
 };
 
 
-Node *linkList::addNode(Node *element, int elementValue){
-		element->data=elementValue;
-		//assign a value to a node
-		//point to the next node and assign value
+Node *linkList::addNode(Node *e, int eValue) {
+        Node *tmp = new Node();
+        e->next = tmp;
+        tmp->data = eValue;
+        return (addNode(e->next, eValue));
+
 }
 
-Node *linkList::Traverse(Node *element) {
-		Node *e=new Node();
-		while(e->data!=NULL)
-		{
-			printf("%d ", e->data);
-			};
+Node *linkList::Traverse(Node *e, int *temp){
+	Node *tmp= new Node();
+	while (tmp!=NULL)
+	{
+		printf("%d ", tmp->data);
+		tmp = tmp -> next;
+	}
 }
 
+/*
+Node *linkList::Traverse(Node *start, int *tmp) {
+    Node *hey;
 
-int main(int argc, const char * argv[]){
-	linkList mylinkList;
-	//how to declare user's linklist and its functions using declared
-	Node *userNode=new Node();
-	//userInputLinkList.addNode(element, 15);
-	//myTree.findNode(treeNode,15);
-	cout << "Here is a link list." << endl;
+    if (start != NULL) {
+        cout << start->data << "->";
+        Traverse(start->next, tmp);
+
+        tmp = start->next;
+        while (tmp != NULL) {
+            cout << tmp->data << "->";
+            Traverse(tmp->next, tmp);
+            tmp = tmp->next;
+            	if (*tmp >= tmp->data) {
+            		return *tmp;
+            	}
+            	else {
+            		*tmp = tmp->data ;
+            		return *tmp;
+            	};
+        }
+
+}
+*/
+
+int main()
+{
+
+	linkList newLink;
+	Node *e=new Node();
+	newLink.addNode(e, 15);
+	newLink.addNode(e, 1);
+	newLink.addNode(e,3);
+	int temp;
+	newLink.Traverse(e, &newLink);
 	return 0;
 }
