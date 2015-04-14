@@ -1,4 +1,4 @@
-//same as BFS approach
+//same as DFS approach
 //but I will indicate whichever is better off and the differences in both traversals
 //it kills all node on the same level of search other than DFS
 //you don't have to worry about having cycles in a graph
