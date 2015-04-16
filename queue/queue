@@ -1,0 +1,13 @@
+//write a template about enqueue and dequeue
+
+int main (){
+//input an array
+//use an iteration to input element into another array, and call it enqueu
+//use an iterative method to delete element from an array and call it dequeue
+}
+
+void enqueue(){
+}
+
+void dequeue(){
+}
