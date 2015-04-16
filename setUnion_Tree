@@ -1,1 +1,6 @@
-
+int main (){
+//weighted union by rank by height
+//the number of children would be tree weight
+//
+return 0;
+}
