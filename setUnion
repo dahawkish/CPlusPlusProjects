@@ -5,6 +5,7 @@ int main (){
   //point to the small set
   //size of the set
   //join function of the linkedlists
+  //the Union of sets ignores the duplicated element
   return 0;
   }
   
