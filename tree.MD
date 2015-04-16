@@ -1,6 +1,7 @@
 It is a little scary when there is not a dictionary about tree jargons ....
 
 parent node = a node has at least one child
+//
 root node = it is not usually the top of the tree
 leave node = internal node
 internal node = must have at least one child ? 
