@@ -1,1 +1,6 @@
 //same idea from queues
+stack (queue, 10)
+pop (queue)
+top (queue)
+size (queue)
+//other functions
