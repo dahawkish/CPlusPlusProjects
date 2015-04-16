@@ -1,0 +1,48 @@
+//my style of creating queues
+struct node{
+  int infor;
+  struct node *next;
+  }
+
+calse Queue {
+  private:
+  node  *rear;
+  node *front;
+  
+  public:
+  Queue();
+  void enqueue();
+  void dequeu():
+  void display();
+}
+
+Queue::Queue(){
+  rear=NULL;
+  front=NULL;
+  }
+  
+void Queue::enqueue(){
+  int data;
+  node *temp = new node;
+  cin >> data; //cin input data to the queue, enqueue
+  temp.info=data;
+  temp.next=NULL;
+  if (front == NULL){
+    front = temp;
+    } else {
+      rear.next = temp;
+      }
+      rear = temp; // assume you know why we simply check the front is null and if not, we just add key values from the rear
+ }
+ 
+ void Queue::dequeue(){
+ node *temp= new node;
+ if (front == NULL)
+ {
+ ///say this is an eamply queue
+ }else{
+ temp = front;
+ front = front -> next;
+ delete temp;
+ }
+ }
