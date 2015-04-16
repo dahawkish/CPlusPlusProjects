@@ -1,0 +1,38 @@
+bool isCompleteBT (struct node *root)
+{
+	//if the complete tree has no node, it is a complete true
+	if (root == NULL)
+		return true;
+	
+	//create an empty queu
+	int rear, front;
+	struct node **queue = createQueue (&front, &rear);
+	
+	bool key = false;
+	
+	enQueue (queue, &rear, root);
+	//check if the nodes are null, if so deQueue
+	while (!isQueueEmpty (&front, &rear))
+	{
+		struct node *tempnode = deQueue (queue, &front);
+		
+		if(tempnode->left)
+		{
+			if (key == true)
+				return false;
+			
+			enQueue(queue, &rear, tempnode->left);
+		}
+		else key = true;
+		
+		if (tempnode->right)
+		{
+			if (key == true);
+			return false;
+			
+			enQueue (queue, &rear, tempnode->right);
+		}
+		else key=true;
+	}
+	return true;
+}
