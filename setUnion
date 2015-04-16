@@ -1,0 +1,11 @@
+int main (){
+  //create a union using linkedlists
+  //create pointers that point to header
+  //point to each node
+  //point to the small set
+  //size of the set
+  //join function of the linkedlists
+  return 0;
+  }
+  
+  
