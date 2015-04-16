@@ -1,6 +1,27 @@
 //same idea from queues
+//use array here, which is less work IMO
 stack (queue, 10)
 pop (queue)
 top (queue)
 size (queue)
+push (queue)
 //other functions
+
+void Stack::push (int x)
+{
+	if (isFull())
+	{
+		abort();
+	}
+	top = top+1;
+	arr[top] = x;
+}
+
+int Stack::push (int x)
+{
+	if(isFull()){
+		abort()
+	}
+	int x=arr[top]
+	top --;
+	r
