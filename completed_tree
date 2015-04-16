@@ -1,0 +1,24 @@
+Here is a file about explaining completed tree.
+
+Thought: I think the professor gave us a lot of examples about completed trees but somehow, understanding the definition is more important.
+
+1. You need to know that a completed tree might exist in more than a binary search tree or binary tree. 
+
+Thought: a lot of data structures courses would introduce binary tree or binary search tree from the beginning, and if you/
+were a math major with some topology background, would have some doubts. It is ok if you over-think, but I try to explain/
+here with my understanding. (let me know if I am wrong....)
+
+Tip: ask your professor if he/she is only talking about completed Binary Search Tree/Binary Tree.
+
+2. About a completed binary search tree/binary tree:
+Tip: think about if a BST/BT is a completed tree from as a programmer
+
+1) find the root, if the root is null, then it is a completed BST/BT?
+
+Tip: A BST/BT can have only one node, which is the root.
+
+a. if yes, return arr[] is empty.
+
+b. if not, enqueue.arr[0].
+
+2) search the second level of the tree.
