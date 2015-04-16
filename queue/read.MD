@@ -20,4 +20,69 @@ struct Queue *createQueue(unsigned capacity)
     return queue;
 }
 
-There are other ways to create the queue...see BFS_graph and DFS_graph
+There are other ways to create the queue...see BFS_graph 
+
+class Queue {
+    private:
+        node *head;
+        node *tail;
+    public:
+        Queue();
+        ~Queue();
+        bool isEmpty();
+        void enqueue(int);
+        int dequeue();
+        void display();
+};
+
+void Queue::display(){
+    node *vertice = new node;
+    vertice = head;
+    if(head == NULL){
+        cout<<"\nEmpty Graph\n";
+    }else{
+        while(vertice!=NULL){
+            cout<<endl<<vertice->val;
+            vertice = vertice->next;
+        }
+    }
+}
+
+Queue::Queue() {
+    head = NULL;
+    tail = NULL;
+}
+
+Queue::~Queue() {
+    delete head;
+}
+
+void Queue::enqueue(int data) {
+    node *temp = new node();
+    temp->val = data;
+    temp->next = NULL;
+    if(head == NULL){
+        head = temp;
+    }else{
+        tail->next = temp;
+    }
+    tail = temp;
+}
+
+int Queue::dequeue() {
+    node *temp = new node();
+    int value;
+    if(head == NULL){
+        cout<<"\nIt is an empty graph.\n";
+    }else{
+        temp = head;
+        value = temp->val;
+        head = head->next;
+        delete temp;
+    }
+    return value;
+}
+
+bool Queue::isEmpty() {
+    return (head == NULL);
+}
