@@ -6,6 +6,7 @@ int main (){
   //size of the set
   //join function of the linkedlists
   //the Union of sets ignores the duplicated element
+  //choose an element as a representative
   return 0;
   }
   
