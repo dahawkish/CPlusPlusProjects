@@ -1,6 +1,7 @@
 int main (){
 //weighted union by rank by height
 //the number of children would be tree weight
+//path compression and update pointers
 //
 return 0;
 }
