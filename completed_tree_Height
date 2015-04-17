@@ -1,0 +1,36 @@
+Leaf nodes are external nodes.
+What is the maximum number of leaf nodes in the k level of a binary tree/binary search tree?
+How many leaf nodes at level k?
+
+int main(){
+ node *myTree;
+ myTree.leveltraversal(e, 15);
+ myTree.leveltraversal(e, 14);
+ myTree.leveltraversal(e, 13);
+ myTree.leveltraversal(e, 12);
+//find the k level nodes using level traveral with an array
+//expected tp print only the 3rd level with only one node,
+//k=3 sum=1
+}
+
+struct node{
+int data;
+node *next;
+}
+
+void leveltraversal(node *child, int value){
+int k; //counting the height of the tree
+int sum=0;
+//traverse all the levels
+node *child=new node();
+while(node!=NULL)
+{ 
+return k=k+1; counting the height with the level
+return sum=sum+1; counting the number of nodes for each level
+node->next;
+}
+}
+
+node tree(node *root, int value){
+
+}
