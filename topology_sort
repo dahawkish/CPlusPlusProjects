@@ -1,0 +1,13 @@
+/*
+
+Topological sorting for directed acyclic graph (DAG) IS A LINEAR ORDERING OF VERTICES SUCH THAT FOR EVERY DIRECTED EDGE UV, VERTEX U COMES BEFORE V IN THE ORDERING.
+Topological soring for a graph is not possible if the graph is not a DAG.
+
+DAG =
+Acyclic Graph=
+
+Topological Soring vs. Depth Frist Traversal (DFS):
+In DFS, we print a vertext and then recursively call DFS for its adjacent vertices.
+In topSort, we need to print a vertect before its adjacent vertice.
+
+*/
