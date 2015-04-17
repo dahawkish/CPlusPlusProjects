@@ -7,4 +7,42 @@ Below are the steps for finding Minimum Spanning Tree ( MST) using Kruskal's alg
 includ this edge. Else, discard it. For edge 1 to edge n, min edge. Chooose a cycle, and include the edge.
 3. Repeat step #2 until there are V-1 edges in the spanning tree. V is the number of the vertices in the given graph.
 
+What does Kruskal's algorithm doe?
+It is to find the minimum spanning tree of a given connected undirected and weighted graph.
+
 */
+
+#includ <string.h>
+struct Edge
+{
+int src, dest, weight;
+}
+
+struct Graph
+{
+in V, E;
+struct Edge* edge;
+}
+struct Graph* createGrah(int V, int E)
+{
+struct Graph* graph = (struct Graph*) malloc (sizeof(struct Graph));
+graph->V=V;
+graph->E=E;
+graph->edge=(struct Edge*) malloc (graph->E *sizeof(struct Edge))
+return graph;
+}
+struct subset
+{
+int parent;
+int rank;
+}
+
+int find(struct subset subsets[], int i)
+{
+if (subusets[i].parent !=i)
+
+subset[i].parent = find (subsets.subsets[i].parent);
+//find the root and make root as parent of i
+}
+
+
