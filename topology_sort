@@ -10,3 +10,29 @@ In DFS, we print a vertext and then recursively call DFS for its adjacent vertic
 In topSort, we need to print a vertect before its adjacent vertice.
 
 */
+
+#includ <list>
+#includ <stack>
+
+class Graph
+{
+  int V;
+  list<int> *adj;
+  void topologicalSortUntil(int v, bool visited[], stack<int> &Stack);
+  public:
+  Graph(int V);
+  void addEdge(int v, int w);
+  void topologicalSort();
+}
+
+Graph::graph(int V)
+{
+  this->V=V;
+  adj=new list<int>[V];
+}
+
+void Graph::addEdge(int v, int w)
+{
+  ajd[v].push_back(w);
+}
+
