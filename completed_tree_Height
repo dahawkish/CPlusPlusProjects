@@ -1,7 +1,13 @@
+/*
 Leaf nodes are external nodes.
 What is the maximum number of leaf nodes in the k level of a binary tree/binary search tree?
 How many leaf nodes at level k?
-
+Also, I forgot how the same global variables could run different places at the same time. 
+For example, for level k in function leveltraversal(), it adds up when the level goes down.
+For level k in creating a tree, it should be renamed because in might introduce the value k from the leveltraversal().
+If we have a global value k for levels, the operation of k should be in main().
+*/
+------------------------------
 int main(){
  node *myTree;
  myTree.leveltraversal(e, 15);
