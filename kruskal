@@ -1,5 +1,10 @@
 /*
 
 What is a minimu spanning tree?
+Below are the steps for finding Minimum Spanning Tree ( MST) using Kruskal's algorithm:
+1. sort all the edges in non-decreasing order of their weight. A>>B>>C>>D>>.....
+2. Pick the smallest edge. Check if it forms a cycle with the spanning tree so far. If a cycle is not formed, 
+includ this edge. Else, discard it. For edge 1 to edge n, min edge. Chooose a cycle, and include the edge.
+3. Repeat step #2 until there are V-1 edges in the spanning tree. V is the number of the vertices in the given graph.
 
 */
