@@ -9,8 +9,8 @@ class Node{
 public:
 	int data;
 	Node *next;
-	Node(){
-	}
+	//Node(){
+	//}
 };
 
 class linkList{
@@ -39,7 +39,7 @@ Node *linkList::addNode(Node *e, int eValue) {
 
 }
 
-Node *linkList::Traverse(Node *e, int *temp){
+Node *linkList::Traverse(Node *e){
 	Node *tmp= new Node();
 	while (tmp!=NULL)
 	{
@@ -49,7 +49,7 @@ Node *linkList::Traverse(Node *e, int *temp){
 }
 
 /*
-Node *linkList::Traverse(Node *start, int *tmp) {
+Node *linkList::Traverse(Node *start) {
     Node *hey;
 
     if (start != NULL) {
@@ -82,6 +82,6 @@ int main()
 	newLink.addNode(e, 1);
 	newLink.addNode(e,3);
 	int temp;
-	newLink.Traverse(e, &newLink);
+	newLink.Traverse(e);
 	return 0;
 }
